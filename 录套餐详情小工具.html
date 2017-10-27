@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>一起录套餐</title>
+    <style>
+    	textarea {
+		    display: block;
+		    width: 100%;
+		    height: 500px;
+		    outline: none;
+		}
+		#btn1{
+			text-align: center;
+		    height: 50px;
+		    line-height: 50px;
+		    background-color: burlywood;
+		    width: 100px;
+		    margin: 10px 0;
+		    color: #fff;
+		    cursor: pointer;
+		}
+		#btn1:hover{
+			background-color: #d6ab73;
+		}
+    </style>
+</head>
+<body>
+    <div id="editor">
+    </div>
+    <div id="btn1">转换</div>
+    <script src='./js/jquery-1.7.2.min.js'></script>
+    <script type="text/javascript" src="./js/test.js"></script>
+    <script type="text/javascript" src="./js/wangEditor-3.0.11/release/wangEditor.min.js"></script>
+    <script type="text/javascript">
+        var E = window.wangEditor
+        var editor = new E('#editor')
+        editor.create()
+	    $('#btn1').on('click', function () {
+	        editor.txt.html();
+	        $("body").append("<textarea>"+reSetData()+"</textarea>")
+	        $("textarea").focus()
+	    })
+    </script>
+</body>
+</html>
